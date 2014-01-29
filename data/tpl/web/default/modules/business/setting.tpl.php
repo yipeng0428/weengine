@@ -1,0 +1,23 @@
+<?php defined('IN_IA') or exit('Access Denied');?><?php include $this->template('common/header', TEMPLATE_INCLUDEPATH);?>
+<div class="main">
+	<form action="" method="post" class="form-horizontal form">
+		<h4>商户管理</h4>
+		<table class="tb">
+			<tr>
+				<th>LBS查询范围</th>
+				<td>
+					<input type="text" name="range" class="span2" value="<?php echo $settings['range'];?>" /> 单位千米（KM）
+					<div class="help-block">设置用户在发送位置信息时，回复此设置项方圆范围内的商家。默认为<span style="color:red">&nbsp;5&nbsp;</span>公里以内的商家。</div>
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>
+					<input name="submit" type="submit" value="提交" class="btn btn-primary span3" />
+					<input type="hidden" name="token" value="<?php echo $_W['token'];?>" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<?php include $this->template('common/footer', TEMPLATE_INCLUDEPATH);?>
